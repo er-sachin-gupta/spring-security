@@ -20,6 +20,8 @@ public class JWTService {
     private static final String SECRET_KEY = "05fb65ef16988670c550f1c3fd1cd3344572a531fa4d7ed84acb550821541e4b";
 
     public String extractUsername(String token) {
+        /*Function<Claims, String> func = claims -> claims.getSubject();
+        return extractClaim(token, func);*/
         return extractClaim(token, Claims::getSubject);
     }
 
